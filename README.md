@@ -1,6 +1,6 @@
-# quiz
+# Mitologia Quiz App
 
-A new Flutter project.
+> Primeiro app desenvolvido em Flutter. Um quiz de perguntas e respostas.
 
 ## Getting Started
 
