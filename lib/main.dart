@@ -33,6 +33,12 @@ class _PerguntaAppState extends State<PerguntaApp>{
         'respostas':['Zeus','Athena','Apollo','Mercúrio'],
         }
     ];
+
+    List<String> respostas = perguntas[_perguntaSelecionada].cast()['respostas'];
+    
+    //for (String textoResp in respostas) {
+      //widgets.add(Resposta(textoResp, _responder));
+    //}
     return MaterialApp(
       theme:ThemeData(
         primaryColor: Colors.purple
@@ -44,10 +50,8 @@ class _PerguntaAppState extends State<PerguntaApp>{
         ),
         body: Column(
           children: [
-            Questao(perguntas[_perguntaSelecionada]['texto']),
-            Resposta('Resposta 1',_responder),
-            Resposta('Resposta 2',_responder),
-            Resposta('Resposta 3',_responder),
+            Questao(perguntas[_perguntaSelecionada]['texto'].toString()),
+            ... respostas.map((t) =>Resposta(t,_responder)).toList(),
           ],
         ),
       ),
