@@ -1,15 +1,14 @@
 //Material = android || Carpetino = iOS
 import 'package:flutter/material.dart';
-import './questao.dart';
-import './resposta.dart';
 import './resultado.dart';
+import './questionario.dart';
 
 main()=>runApp(new PerguntaApp());
 
 class _PerguntaAppState extends State<PerguntaApp>{
   var _perguntaSelecionada = 0;
 
-  final  List<Map> _perguntas = const [
+  final   _perguntas = const [
       {
         'texto':'Qual a qual Mitologia pertence o deus Barão Samedi?',
         'respostas':['Voodo','Maia','Nórdica','Celta'],
@@ -29,22 +28,19 @@ class _PerguntaAppState extends State<PerguntaApp>{
     ];
 
   void _responder(){
+    if(temPerguntaSelecionada){
     setState((){
       _perguntaSelecionada++;
     });
+    }
   }
 
   bool get temPerguntaSelecionada{
     return _perguntaSelecionada < _perguntas.length;
   }
+
   @override
   Widget build(BuildContext context){
-    
-
-    List<String> respostas = temPerguntaSelecionada ? _perguntas[_perguntaSelecionada].cast()['respostas'] : [];
-    //for (String textoResp in respostas) {
-      //widgets.add(Resposta(textoResp, _responder));
-    //}
     return MaterialApp(
       theme:ThemeData(
         primaryColor: Colors.purple
@@ -54,11 +50,11 @@ class _PerguntaAppState extends State<PerguntaApp>{
           title: Text('Quiz da Mitologia'),
           centerTitle: true,
         ),
-        body: temPerguntaSelecionada ? Column(
-          children: [
-            Questao(_perguntas[_perguntaSelecionada]['texto'].toString()),
-            ... respostas.map((t) =>Resposta(t,_responder)).toList(),
-          ],
+        body: temPerguntaSelecionada ?
+          Questionario(
+          perguntas: _perguntas,
+          perguntaSelecionada: _perguntaSelecionada,
+          quandoResponder: _responder,
         ):Resultado()
       ),
     );
