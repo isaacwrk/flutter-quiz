@@ -6,12 +6,14 @@ class Resposta extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-        style: TextButton.styleFrom(
-          backgroundColor: Colors.blue
-        ),
+    return Container(
+      width: double.infinity,
+      child: RaisedButton(
+        textColor: Colors.white,
+        color:Colors.blue,
         child: Text(texto),
-        onPressed: null,
-        );
+        onPressed: (){},
+      ),
+    );
   }
 }
