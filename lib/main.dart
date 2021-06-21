@@ -7,30 +7,56 @@ main()=>runApp(new PerguntaApp());
 
 class _PerguntaAppState extends State<PerguntaApp>{
   var _perguntaSelecionada = 0;
-
+  var _notaTotal = 0;
   final   _perguntas = const [
       {
         'texto':'Qual a qual Mitologia pertence o deus Barão Samedi?',
-        'respostas':['Voodo','Maia','Nórdica','Celta'],
+        'respostas':[
+          {'texto':'Maia','nota':7},
+          {'texto':'Nórdica','nota':2},
+          {'texto':'Voodo','nota':10},
+          {'texto':'Celta','nota':5}
+        ],
       },
       { 'texto':'Qual é o deus da chuva maia?',
-        'respostas':['Chaac','Ah puch','Cabrakan','Camazotz'],
+        'respostas':[
+        {'texto':'Chaac','nota':10},
+        {'texto':'Ah puch','nota':7},
+        {'texto':'Cabrakan','nota':4},
+        {'texto':'Camazotz','nota':8}
+        ],
       },
       { 'texto':'Qual deus nórdico teve sua mão decepada?',
-        'respostas':['Tyr','Fenrir','Freya','Odin'],
+        'respostas':[
+          {'texto':'Fenrir','nota':8},
+          {'texto':'Tyr','nota':10},
+          {'texto':'Freya','nota':4},
+          {'texto':'Odin','nota':7}
+          ],
       },
       { 'texto':'Qual mitologia associa os nomes dos deuses a planetas?',
-        'respostas':['Voodo','Grega','Egipcia','Romana'],
+        'respostas':[
+          {'texto':'Voodo','nota':5},
+          {'texto':'Grega','nota':7},
+          {'texto':'Egipcia','nota':1},
+          {'texto':'Romana','nota':10}
+          ],
         },
       { 'texto':'Na mitologia grega, qual é considerado o mensageiro dos deuses?',
-        'respostas':['Zeus','Athena','Apollo','Mercúrio'],
+        'respostas':[
+          {'texto':'Zeus','nota':6},
+          {'texto':'Athena','nota':3},
+          {'texto':'Apollo','nota':4},
+          {'texto':'Mercúrio','nota':10}
+          ],
         }
     ];
 
-  void _responder(){
+  void _responder(int nota){
     if(temPerguntaSelecionada){
     setState((){
       _perguntaSelecionada++;
+      _notaTotal += nota;
     });
     }
   }
