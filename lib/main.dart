@@ -61,6 +61,13 @@ class _PerguntaAppState extends State<PerguntaApp>{
     }
   }
 
+  void _reiniciarQuiz(){
+    setState(() {
+      _perguntaSelecionada =0;
+      _notaTotal = 0;
+    });
+  }
+
   bool get temPerguntaSelecionada{
     return _perguntaSelecionada < _perguntas.length;
   }
@@ -81,7 +88,7 @@ class _PerguntaAppState extends State<PerguntaApp>{
           perguntas: _perguntas,
           perguntaSelecionada: _perguntaSelecionada,
           quandoResponder: _responder,
-        ):Resultado(_notaTotal)
+        ):Resultado(_notaTotal,_reiniciarQuiz)
       ),
     );
   }
