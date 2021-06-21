@@ -6,11 +6,11 @@ class Resultado extends StatelessWidget {
    Resultado(this.nota, this.quandoReiniciarQuiz);
 
   String get fraseResultado{
-      if(nota < 20){
+      if(nota <= 20){
         return 'Parabéns mas não é o suficiente!';
-      }else if(nota < 35){
+      }else if(nota <= 35){
         return 'aprendiz dos deuses!\n      você é bom!';
-      }else if(nota < 40){
+      }else if(nota <= 40){
         return 'Semi-deus!\nimpressionante!';
       }else{
         return 'Acólito dos deuses!\nVocê acertou todas!';

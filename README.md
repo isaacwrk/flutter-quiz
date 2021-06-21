@@ -1,16 +1,8 @@
 # Mitologia Quiz App
+![](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white) ![](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white) ![](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
 > Primeiro app desenvolvido em Flutter. Um quiz de perguntas e respostas.
+Mitologia Quiz  é um app desenvolvido para os estudos iniciais em dart/flutter. 
+responda as perguntas e de acordo com a assertividade você receberá um ranking!
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ ![](https://github.com/isaacwrk/js-exercises/blob/master/ex/quiz.jpeg)
