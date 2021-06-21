@@ -81,7 +81,7 @@ class _PerguntaAppState extends State<PerguntaApp>{
           perguntas: _perguntas,
           perguntaSelecionada: _perguntaSelecionada,
           quandoResponder: _responder,
-        ):Resultado()
+        ):Resultado(_notaTotal)
       ),
     );
   }
